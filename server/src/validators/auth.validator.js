@@ -1,6 +1,6 @@
-import {body,validateResult, validationResult} from 'express-validator'
+import {body, validationResult} from 'express-validator'
 
-const registerValidator = [
+export const registerValidator = [
   body('email')
   .exists().withMessage("Email is required").bail()
   .trim()
