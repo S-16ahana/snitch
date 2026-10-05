@@ -17,3 +17,11 @@ export function createRefreshToken({userId,role}){
 
   return refreshToken
 }
+
+export function readRefreshToken(refreshToken){
+  return jwt.verify(refreshToken,config.REFRESH_TOKEN_SECRET)//refresh token is also kept as hashed 
+}
+
+export function readAccessToken(accessToken){
+  return jwt.verify(accessToken,config.ACCESS_TOKEN_SECRET)
+}
